@@ -12,7 +12,7 @@ export default function SearchBar() {
         <option value="Fabacee">Fabaceae</option>
         <option value="Poacee">Poaceae</option>
       </select>
-      <button id="SearchBtn">🔍</button>
+      <button id="SearchBtn">🔍 →</button>
     </div>
   );
 }

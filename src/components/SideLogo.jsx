@@ -1,13 +1,12 @@
 import LanguageSwitcher from "./LanguageSwitcher";
+import Logo from "../assets/logo.png";
 
 export default function SideLogo() {
   return (
     <div className="side-logo">
-      <div className="logo-box">
         <h2>
-          PLANT <br /> FINDER
+          <img src={Logo}></img>
         </h2>
-      </div>
 
       <LanguageSwitcher />
     </div>
