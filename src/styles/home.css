@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Georgia", serif;
+}
+
+.home {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.content {
+  width: 70%;
+  color: white;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.search-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-row input {
+  padding: 0.6rem;
+  width: 250px;
+}
+
+.search-row button {
+  padding: 0.6rem 1.2rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-row select {
+  padding: 0.6rem;
+}
+
+.main-box {
+  display: flex;
+  gap: 2rem;
+}
+
+.plant-card {
+  background: rgba(0,0,0,0.6);
+  padding: 1rem;
+  width: 220px;
+  text-align: center;
+}
+
+.plant-card img {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.info-box {
+  background: rgba(0,0,0,0.6);
+  border: 2px solid black;
+  padding: 2rem;
+  width: 350px;
+}
+
+.info-box ul {
+  list-style: disc;
+  margin-left: 1.2rem;
+}
+
+.side-logo {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-box {
+  background: #4CAF50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  width: 200px;
+}
+
+.languages {
+  color: white;
+  text-align: right;
+  line-height: 1.8;
+  cursor: pointer;
+}
