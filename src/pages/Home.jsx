@@ -8,11 +8,17 @@ import PlantCard from "../components/PlantCard.jsx";
 import InfoBox from "../components/InfoBox.jsx";
 import SideLogo from "../components/SideLogo.jsx";
 
+import { useLanguage } from "../context/LanguageContext.jsx";
+import { uiText } from "../i18n/ui";
+
 export default function Home() {
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setFilteredPlants] = useState([]);
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [familyFilter, setFamilyFilter] = useState("");
+
+  const { language } = useLanguage();
+  const t = uiText[language];
 
   async function fetchPlants(query) {
     const response = await fetch(
@@ -48,7 +54,7 @@ export default function Home() {
     <div className="home" style={{ backgroundImage: `url(${bg})` }}>
       <div className="overlay">
         <div className="content">
-          <h1>SCEGLI LA PIANTA DI CUI SAPERE LE INFORMAZIONI</h1>
+          <h1>{t.title}</h1>
 
           <SearchBar
             onSearch={handleSearch}

@@ -9,7 +9,7 @@ export default function SearchBar({ onSearch, onFamilyChange }) {
       <input
         id="SearchBar"
         type="text"
-        placeholder="Cerca pianta..."
+        placeholder={t.search}
       />
 
       <select
