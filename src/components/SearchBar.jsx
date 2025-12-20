@@ -1,5 +1,10 @@
+import { uiText } from "../i18n/ui";
+import { useLanguage } from "../context/LanguageContext.jsx";
+
 export default function SearchBar({ onSearch, onFamilyChange }) {
-  return (
+    const { language } = useLanguage();
+    const t = uiText[language];
+    return (
     <div className="search-row">
       <input
         id="SearchBar"
@@ -13,7 +18,7 @@ export default function SearchBar({ onSearch, onFamilyChange }) {
         onChange={(e) => onFamilyChange(e.target.value)}
       >
         <option value="">
-          Tutte le famiglie
+          {t.allFamilies}
         </option>
         <option value="Rosaceae">Rosaceae</option>
         <option value="Orchidaceae">Orchidaceae</option>
