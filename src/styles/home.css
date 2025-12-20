@@ -158,11 +158,3 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
-.results {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-height: 400px;
-  overflow-y: auto;
-}
