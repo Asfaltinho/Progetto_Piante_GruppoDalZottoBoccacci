@@ -158,3 +158,10 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.results {
+  max-height: 60vh;     /* altezza area piante */
+  overflow-y: auto;     /* scroll solo qui */
+
+  padding-right: 0.5rem;
+}
