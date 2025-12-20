@@ -1,18 +1,18 @@
-export default function SearchBar() {
+import { useState } from "react";
+
+export default function SearchBar({ onSearch }) {
+  const [query, setQuery] = useState("");
+
   return (
     <div className="search-row">
-      <input id="SearchBar" type="text" placeholder="Cerca pianta..." />
+      <input
+        type="text"
+        placeholder="Cerca pianta..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
 
-      <select id="FamilyDropdwon" defaultValue="">
-        <option disabled hidden value="">Filtra per Famiglia</option>
-        <option value="">Nessun Filtro</option>
-        <option value="Rose">Rosaceae</option>
-        <option value="orchidee">Orchidaceae</option>
-        <option value="Asteracee">Asteraceae</option>
-        <option value="Fabacee">Fabaceae</option>
-        <option value="Poacee">Poaceae</option>
-      </select>
-      <button id="SearchBtn">🔍 →</button>
+      <button onClick={() => onSearch(query)}>🔍 →</button>
     </div>
   );
 }

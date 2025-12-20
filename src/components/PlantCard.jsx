@@ -1,10 +1,8 @@
-import orchid from "../assets/orchid.jpg";
-
-export default function PlantCard() {
+export default function PlantCard({ name, image }) {
   return (
     <div className="plant-card">
-      <img src={orchid} alt="pianta" />
-      <p>Nome scientifico</p>
+      {image && <img src={image} alt={name} />}
+      <p>{name}</p>
     </div>
   );
 }
