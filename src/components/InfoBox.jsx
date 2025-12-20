@@ -1,9 +1,7 @@
 export default function InfoBox({ plant }) {
   if (!plant) {
     return (
-      <div className="info-box">
-        <p>Seleziona una pianta per vedere le informazioni</p>
-      </div>
+      <br/>
     );
   }
 
@@ -16,8 +14,13 @@ export default function InfoBox({ plant }) {
           <strong>Famiglia:</strong> {plant.family || "N/D"}
         </li>
         <li>
-          <strong>Dove si trova:</strong>{" "}
-          {plant.distribution?.native?.join(", ") || "N/D"}
+            <strong>Nome comune famiglia:</strong> {plant.family_common_name || "N/D"}
+        </li>
+        <li>
+            <strong>Genere:</strong> {plant.genus || "N/D"}
+        </li>
+        <li>
+            <strong>Anno:</strong> {plant.year || "N/D"}
         </li>
       </ul>
     </div>
