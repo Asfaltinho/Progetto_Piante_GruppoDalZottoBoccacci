@@ -1,14 +1,20 @@
 export default function SearchBar({ onSearch, onFamilyChange }) {
   return (
     <div className="search-row">
-      <input id="SearchBar" type="text" placeholder="Cerca pianta..." />
+      <input
+        id="SearchBar"
+        type="text"
+        placeholder="Cerca pianta..."
+      />
 
       <select
         id="FamilyDropdwon"
-        onChange={(e) => onFamilyChange(e.target.value)}
         defaultValue=""
+        onChange={(e) => onFamilyChange(e.target.value)}
       >
-        <option value="">Tutte le famiglie</option>
+        <option value="">
+          Tutte le famiglie
+        </option>
         <option value="Rosaceae">Rosaceae</option>
         <option value="Orchidaceae">Orchidaceae</option>
         <option value="Asteraceae">Asteraceae</option>
@@ -16,7 +22,12 @@ export default function SearchBar({ onSearch, onFamilyChange }) {
         <option value="Poaceae">Poaceae</option>
       </select>
 
-      <button onClick={onSearch}>🔍 →</button>
+      <button onClick={() => {
+        const q = document.getElementById("SearchBar").value;
+        onSearch(q);
+      }}>
+        🔍 →
+      </button>
     </div>
   );
 }
