@@ -1,27 +1,28 @@
+import { useEffect, useState } from "react";
+import { useLanguage } from "../context/LanguageContext.jsx";
+import { translate } from "../utils/translate";
+import { uiText } from "../i18n/ui";
+
 export default function InfoBox({ plant }) {
-  if (!plant) {
-    return (
-      <br/>
-    );
-  }
+  const { language } = useLanguage();
+  const t = uiText[language];
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    if (!plant) return;
+    translate(plant.common_name, language).then(setName);
+  }, [plant, language]);
+
+  if (!plant) return null;
 
   return (
     <div className="info-box">
-      <h3>{plant.common_name || "Nome comune non disponibile"}</h3>
-
+      <h3>{name || plant.common_name}</h3>
       <ul>
-        <li>
-          <strong>Famiglia:</strong> {plant.family || "N/D"}
-        </li>
-        <li>
-            <strong>Nome comune famiglia:</strong> {plant.family_common_name || "N/D"}
-        </li>
-        <li>
-            <strong>Genere:</strong> {plant.genus || "N/D"}
-        </li>
-        <li>
-            <strong>Anno:</strong> {plant.year || "N/D"}
-        </li>
+        <li><strong>{t.family}:</strong> {plant.family}</li>
+        <li><strong>{t.familyCommon}:</strong> {plant.family_common_name}</li>
+        <li><strong>{t.genus}:</strong> {plant.genus}</li>
+        <li><strong>{t.year}:</strong> {plant.year}</li>
       </ul>
     </div>
   );
