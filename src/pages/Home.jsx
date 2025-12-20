@@ -11,13 +11,13 @@ import SideLogo from "../components/SideLogo.jsx";
 export default function Home() {
   const [plants, setPlants] = useState([]);
   const [selectedPlant, setSelectedPlant] = useState(null);
+  const [familyFilter, setFamilyFilter] = useState("");
 
   async function fetchPlants() {
     const query = document.getElementById("SearchBar").value;
-    const family = document.getElementById("FamilyDropdwon").value;
 
     const response = await fetch(
-      `http://localhost:3000/plants?q=${query}&family=${family}`
+      `http://localhost:3000/plants?q=${query}`
     );
     const data = await response.json();
 
@@ -25,17 +25,27 @@ export default function Home() {
     setSelectedPlant(null);
   }
 
+  // 🔥 FILTRO LOCALE
+  const filteredPlants = familyFilter
+    ? plants.filter(
+        (plant) => plant.family === familyFilter
+      )
+    : plants;
+
   return (
     <div className="home" style={{ backgroundImage: `url(${bg})` }}>
       <div className="overlay">
         <div className="content">
           <h1>SCEGLI LA PIANTA DI CUI SAPERE LE INFORMAZIONI</h1>
 
-          <SearchBar onSearch={fetchPlants} />
+          <SearchBar
+            onSearch={fetchPlants}
+            onFamilyChange={setFamilyFilter}
+          />
 
           <div className="main-box">
             <div className="results">
-              {plants.map((plant) => (
+              {filteredPlants.map((plant) => (
                 <PlantCard
                   key={plant.id}
                   plant={plant}
