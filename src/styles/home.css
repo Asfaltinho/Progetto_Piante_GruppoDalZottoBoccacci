@@ -54,7 +54,7 @@
 
 .main-box {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .plant-card {
@@ -62,12 +62,19 @@
   padding: 1rem;
   width: 220px;
   text-align: center;
+  cursor: pointer;
 }
 
 .plant-card img {
   width: 100%;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
+
+.plant-card:hover {
+  outline: 2px solid rgba(255,255,255,0.3);
+}
+
 
 .info-box {
   background: rgba(0,0,0,0.6);
@@ -133,29 +140,30 @@
 
 /* POSIZIONI */
 
-/* In alto */
+/* In basso */
 .top.deu {
-  top: -40px;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .top.ita {
-  top: -70px;
+  top: 105px;
   left: 50%;
   transform: translateX(-50%);
 }
 
+
 /* A sinistra */
 .left.ing {
   left: -60px;
-  top: 50%;
+  top: 80%;
   transform: translateY(-50%);
 }
 
 .left.jap {
-  left: -100px;
-  top: 50%;
+  left: -110px;
+  top: 80%;
   transform: translateY(-50%);
 }
 
