@@ -1,6 +1,6 @@
 import "../styles/home.css";
 import bg from "../assets/bg.jpeg";
-
+import LanguageSwitcher from '../components/LanguageSwitcher.jsx'
 import SearchBar from "../components/SearchBar.jsx";
 import PlantCard from "../components/PlantCard.jsx";
 import InfoBox from "../components/InfoBox.jsx";
@@ -23,6 +23,10 @@ export default function Home() {
         </div>
 
         <SideLogo />
+        <div className="language-switcher">
+        <LanguageSwitcher/>
+        </div>
+        
       </div>
     </div>
   );
