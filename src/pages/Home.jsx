@@ -1,6 +1,6 @@
+import { useState } from "react";
 import "../styles/home.css";
 import bg from "../assets/bg.jpeg";
-import { useState } from "react";
 
 import SearchBar from "../components/SearchBar";
 import PlantCard from "../components/PlantCard";
@@ -11,22 +11,21 @@ export default function Home() {
   const [plants, setPlants] = useState([]);
 
   async function fetchPlants(query, family) {
-    if (!query) return;
-
     let url = `https://trefle.io/api/v1/plants/search?token=usr-pHbEB8YkhsmkSbvfI1YHrmXqoVJqSkYDV1gGE3O2asM&q=${query}`;
 
-    if (family && family !== "") {
+    if (family) {
       url += `&filter[family]=${family}`;
     }
 
-    const response = await fetch(url);
-    const data = await response.json();
-    setPlants(data.data);
+    const res = await fetch(url);
+    const data = await res.json();
+    setPlants(data.data || []);
   }
 
   return (
     <div className="home" style={{ backgroundImage: `url(${bg})` }}>
       <div className="overlay">
+
         <div className="content">
           <h1>SCEGLI LA PIANTA DI CUI SAPERE LE INFORMAZIONI</h1>
 
@@ -41,8 +40,6 @@ export default function Home() {
               />
             ))}
           </div>
-
-          <InfoBox />
         </div>
 
         <SideLogo />
