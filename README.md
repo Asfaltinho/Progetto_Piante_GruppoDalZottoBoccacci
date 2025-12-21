@@ -45,9 +45,10 @@ Senza il backend attivo, il sito non mostrerà alcun risultato.
 
 La lingua di default del sito è inglese (ENG).
 
-Per via delle policy cors dell'api Trefle, le chiamate sono possibili solo tramite browser, curl o appuntto NodeJS; essendo l'unico modo praticabile per un progetto React, è stato (purtroppo) necessario questo approccio al backend
+Per via delle policy cors dell'api Trefle, le chiamate sono possibili solo tramite browser, curl o appunto NodeJS; essendo l'unico modo praticabile per un progetto React, è stato (purtroppo) necessario questo approccio al backend
 
 ## 4️⃣ Struttura del Progetto (semplificata)
+```plaintext
 progetto-piante/
 │
 ├── src/
@@ -93,3 +94,4 @@ progetto-piante/
 ├── eslint.config.js
 ├── vite.config.js
 └── README.md
+```
