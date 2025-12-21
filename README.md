@@ -1,5 +1,3 @@
-cco il testo pronto da copiare e incollare in un file instructions.md.
-
 # Istruzioni per avviare il progetto – Progetto Piante
 
 Queste istruzioni spiegano come avviare correttamente **frontend** e **backend** del progetto.
