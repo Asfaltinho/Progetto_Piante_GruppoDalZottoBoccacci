@@ -145,12 +145,14 @@
   top: 70px;
   left: 50%;
   transform: translateX(-50%);
+  cursor: pointer;
 }
 
 .top.ita {
   top: 105px;
   left: 50%;
   transform: translateX(-50%);
+  cursor: pointer;
 }
 
 
@@ -159,12 +161,14 @@
   left: -60px;
   top: 80%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .left.jap {
   left: -110px;
   top: 80%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .results {
